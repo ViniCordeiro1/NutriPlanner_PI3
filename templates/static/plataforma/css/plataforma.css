@@ -1,0 +1,108 @@
+.card-lateral{
+
+    background-color: #B2D12E;
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 5px 5px 5px gray;
+
+}
+
+.card-lateral:hover {
+    transition: 1ms ease-in-out;
+    background: #589f37;
+  }
+  
+  .card-lateral:hover svg {
+    stroke-dashoffset: -480;
+  }
+  
+  .card-lateral span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  }
+.link-lateral:hover{
+    text-decoration: none;
+}
+
+.titulo{
+
+    color: #B2D12E;
+
+}
+
+.card-paciente{
+
+    background-color: #EAEAEA;
+    width: 80;
+    box-shadow: 3px 3px 3px gray;
+    padding: 20px;
+    color: black;
+
+}
+
+.link-hover:hover{
+    text-decoration: none;
+}
+
+.foto-perfil{
+    text-align: center;
+}
+
+.dados{
+    font-weight: bold;
+}
+
+.descricao{
+
+    margin-left: -12%;
+
+}
+
+@media (max-width: 1300px)
+{
+
+    .descricao{
+
+        margin-left: 1px;
+    
+    }
+
+}
+
+.btn-first{
+    padding: 10px 20px;
+    border-radius: 6px;
+    border-width: 2px;
+    border-style: none;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+    background-color: #B2D12E;
+    color: white;
+
+
+
+}
+
+.btn-first:hover {
+    transition: 1ms ease-in-out;
+    background: #589f37;
+  }
+  
+  .btn-first:hover svg {
+    stroke-dashoffset: -480;
+  }
+  
+  .btn-first span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+
+

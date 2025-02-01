@@ -1,0 +1,89 @@
+.sidebar{
+    background-color: #edefed;
+    height: 100vh;
+}
+
+
+.logo_sidebar{
+    text-align: center;
+}
+
+.img_logo_sidebar{
+    width: 100%;
+ 
+
+}
+
+.sidebar{
+
+    background-image: url('/static/autenticacao/img/fundo_sidebar.png');
+
+}
+
+.area_cadastrar{
+    margin-top: 8%;
+    margin-left: 15%;
+    width: 70%;
+}
+
+.titulo{
+
+    font-weight: bold;
+
+}
+
+.sub-titulo{
+    color: gray;
+}
+
+.input-form{
+    margin-top: 15px;
+    width: 100%;
+    padding: 5px;
+    outline: 0;
+
+}
+
+.input-form:focus{
+
+    border: 2px solid #edefed !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.btn-first{
+    padding: 10px 20px;
+    border-radius: 6px;
+    border-width: 2px;
+    border-style: none;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+    background-color: #B2D12E;
+    color: white;
+
+
+
+}
+
+.btn-first:hover {
+    transition: 1ms ease-in-out;
+    background: #589f37;
+  }
+  
+  .btn-first:hover svg {
+    stroke-dashoffset: -480;
+  }
+  
+  .btn-first span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+
