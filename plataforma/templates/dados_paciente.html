@@ -16,7 +16,11 @@
     <div class="row">
 
         <div class="col-md-3">
-            <img src="{% static 'plataforma/img/perfil1.png' %}">
+            {% if paciente.sexo == "M"%}
+                <img src="{% static 'plataforma/img/perfil2.png' %}">
+            {% else %}
+                <img src="{% static 'plataforma/img/perfil1.png' %}">
+            {% endif %}
         </div>
 
         <div class="col-md-3 dados descricao">
@@ -26,8 +30,7 @@
         
     </div>
     <hr>
-
-
+    
     <button type="button" class="btn-first" data-toggle="modal" data-target="#modal">
         Adicionar dados do paciente
     </button>
@@ -43,16 +46,60 @@
             </tr>
         </thead>
         <tbody>
+        {% for dado in dados_paciente %}
             <tr>
-                <th scope="row">58 Kg</th>
-                <td>173 cm</td>
-                <td>19%</td>
-                <td>25%</td>
+                <th scope="row">{{dado.peso}} Kg</th>
+                <td>{{dado.altura}} cm</td>
+                <td>{{dado.percentual_gordura}}%</td>
+                <td>{{dado.percentual_musculo}}%</td>
             </tr>
+        {% endfor %}
             
         </tbody>
     </table>
     
+    <div style="width: 90%;">
+        <canvas id="myChart"></canvas>
+    </div>  
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    
+        fetch("/grafico_peso/{{paciente.id}}/",{
+            method: 'POST',
+        }).then(function(result){
+            return result.json()
+        }).then(function(data_paciente){
+           
+            const data = {
+                labels: data_paciente['labels'],
+                datasets: [{
+                label: 'Peso paciente',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: data_paciente['peso'],
+                }]
+            };
+    
+            const config = {
+                type: 'line',
+                data: data,
+                options: {}
+            };
+    
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+    
+    
+        })
+    
+    
+    
+    </script>
+
+
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -64,7 +111,7 @@
                 </div>
                 
                 <div class="modal-body">
-                    <form action="{% url 'dados_paciente' paciente.id %}" method="POST">{% csrf_token %}
+                    <form action="{% url 'dados_paciente' paciente.id %}" method="POST"> {% csrf_token %}
                         <h4 class="titulo">Dados do paciente</h4>
                         <div class="form-row">
                             <div class='col-md'>
