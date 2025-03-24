@@ -11,10 +11,10 @@
     <div class="container-fluid">
         
         <div class="row">
-            <div class="col-md-4 sidebar">
-                <div class="logo_sidebar">
+            <div class="col-md-4 sidebar widget">
+                <div class="logo_sidebar widget">
                     
-                    <h1 class="logo">
+                    <h1 class="logo widget">
                         <img class="img_logo_sidebar" src="{% static 'autenticacao/img/Logo.png' %}">
                     </h1>
 
@@ -23,7 +23,7 @@
                 
             </div>
 
-            <div class="col-md-8">
+            <div class="col-md-8 widget">
                 <div class="area_cadastrar">
                     {% if messages %}
                         <br>
@@ -33,22 +33,22 @@
                             </div>
                         {% endfor %}
                     {% endif %}
-                    <h2 class="titulo">Seja bem vindo</h2>
-                    <p class="sub-titulo">Entre com sua conta</p>
+                    <h2 class="titulo widget">Seja bem vindo</h2>
+                    <p class="sub-titulo widget">Entre com sua conta</p>
                     <hr>
                     
-                    <form action="{% url 'logar' %}" method="POST">  {% csrf_token %}
+                    <form  class="widget" action="{% url 'logar' %}" method="POST">  {% csrf_token %}
                         <span class="bold">Nome de usuário</span>
                         <input class="form-control input-form" name="usuario" type="text" placeholder="Digite seu nome...">
                         <br>
                         <span class="bold">Senha</span>
                         <input class="form-control input-form" name="senha" type="password" placeholder="Digite sua senha...">
                         <br>
-                        <button class="btn-first">Logar</button>
+                        <button class="btn-first widget">Logar</button>
 
                     </form>
 
-                    <h3 style="position: relative; font-weight: bold; margin-top: 20px;">Não tem uma conta ?&nbsp <a href="{% url 'cadastro' %}" class="btn btn-outline-success btn-lg">Registre-se</a> </h3>
+                    <h3 class="widget" style="position: relative; font-weight: bold; margin-top: 20px;">Não tem uma conta ?&nbsp <a href="{% url 'cadastro' %}" class="btn btn-outline-success btn-lg widget">Registre-se</a> </h3>
                 </div>
 
             </div>
@@ -58,7 +58,11 @@
 
     </div>
 
-
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      ScrollReveal().reveal('.headline', { duration: 2000 });
+      ScrollReveal().reveal('.widget', { interval: 350 });
+    </script>
 
 
 {% endblock %}

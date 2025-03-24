@@ -12,12 +12,20 @@
   <body>
 
     {% if user.is_authenticated %}
-      <nav style="background-color: #B2D12E;" class="navbar navbar-expand-lg navbar-dark">
-        <a style="font-weight: bold; color: #000000;"  class="navbar-brand" href="{% url 'pacientes' %}">NUTRI PLANNER</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button> <a href="{% url 'sair' %}" class="btn btn-outline-success btn-lg">Logar</a>
-      </nav>
+    
+      <nav style="background-color: #fff;" class="navbar bg-body-tertiary shadow">
+      <div class="container-fluid">
+        <div class="">
+          <a style="font-weight: bold; color: #000000;"  class="navbar-brand" href="{% url 'pacientes' %}">
+            NUTRIPLANNER</a>
+        </div>
+
+        <div class="btn-sair">
+          <a href="{% url 'sair' %}" class="btn btn-outline-success btn-lg">Sair</a>
+        </div>
+      </div>
+        </nav>
+    
 {% endif %}
 
     {% block 'body' %}{% endblock  %}
