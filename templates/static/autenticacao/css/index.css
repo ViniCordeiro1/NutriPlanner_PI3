@@ -1,0 +1,34 @@
+body {
+    background-image: linear-gradient(to bottom, transparent 0%, #B2D12E 80%), url('/static/autenticacao/img/alimentos.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+     
+}
+
+.img_logo_sidebar {
+    margin-bottom: 50px;
+    width: 430px;
+}
+
+.lead {
+    font-weight: bold;
+    color: black;
+}
+
+.sub-titulo {
+    color: black;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #fff;
+    color: black;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #589f37;
+    color: #fff;
+    transition: .5s;
+}
