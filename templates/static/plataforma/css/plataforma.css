@@ -5,13 +5,13 @@ body {
 
 .col-md-2 {
     height: 100vh;
-    max-width: 13.666667% !important;
+    max-width: 20.666667% !important;
     border-right: 1px solid gray;
     
 }
 
 .col-md-4 {
-    max-width: 22.333333% !important; 
+    max-width: 27.333333% !important; 
 }
 
 .col-md-8 {
