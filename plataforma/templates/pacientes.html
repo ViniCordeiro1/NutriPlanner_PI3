@@ -24,7 +24,7 @@
         {% for paciente in pacientes%}
             <div class="col-md-4">
                 <a href="#" class="link-hover">
-                    <div class="card-paciente">
+                    <div class="card-paciente shadow">
                         <div class="foto-perfil">
                         
                             {% if paciente.sexo == "M"%}
@@ -34,7 +34,7 @@
                             {% endif %}
                         </div>
                         <br>
-                        <p class="dados">{{paciente.nome}}</p>
+                        <h5 class="dados">{{paciente.nome}}</h5>
                         <p class="dados">{{paciente.idade}} Anos</p>
                         <p class="dados">{{paciente.email}}</p>
                         
